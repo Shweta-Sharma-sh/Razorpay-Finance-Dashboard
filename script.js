@@ -94,9 +94,6 @@
       container.appendChild(card) 
 
       ;}
-
-
-  
     );
 
   }
