@@ -92,7 +92,6 @@
       card.appendChild(price);
       card.appendChild(btn);
       container.appendChild(card) 
-
       ;}
     );
 
