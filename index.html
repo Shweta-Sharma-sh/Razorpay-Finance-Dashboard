@@ -1,50 +1,77 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Products</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crypto Dashboard</title>
 
-<style>
-#container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}   
-.card {
-  border: 1px solid #ccc;
-  padding: 10px;
-  width: 200px;
-}
-img {
-    width: 100%;
-}
-</style>
-
+  
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <nav>
-    <a href="index.html">Products</a>
-    <a href="cart.html">Cart</a>
-  </nav>  
 
+  
+  <header>
+    <h1>🪙 Crypto Dashboard</h1>
 
+    <button id="themeBtn">🌙 Dark Mode</button>
+  </header>
 
-<h1>Products</h1>
+ 
+  <section class="controls">
 
+   
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="🔍 Search a coin..."
+    />
 
+    
+    <select id="filterSelect">
+      <option value="all">All Coins</option>
+      <option value="gainers">📈 Gainers Only</option>
+      <option value="losers">📉 Losers Only</option>
+    </select>
 
-<h2>Cart</h2>
-<div id="cart">
+   
+    <select id="sortSelect">
+      <option value="rank">Sort by Rank</option>
+      <option value="price_high">Price: High → Low</option>
+      <option value="price_low">Price: Low → High</option>
+      <option value="name">Name: A → Z</option>
+    </select>
 
-<p id="cart-count">0 items</p>
+    
+    <button id="favBtn">⭐ Show Favorites</button>
 
-</div>
+  </section>
 
-<div id="container">
+  
+  <div id="loadingMsg">⏳ Loading coins...</div>
 
-</div>
+  
+  <div id="errorMsg" class="hidden">
+    ❌ Could not load data. 
+    <button id="retryBtn">Try Again</button>
+  </div>
 
-<script src="script.js"></script>
+  
+  <main id="coinContainer">
+    
+  </main>
+
+  
+  <div id="pagination">
+    <button id="prevBtn">⬅ Prev</button>
+    <span id="pageInfo">Page 1</span>
+    <button id="nextBtn">Next ➡</button>
+  </div>
+
+  
+  <script src="script.js"></script>
 
 </body>
 </html>
